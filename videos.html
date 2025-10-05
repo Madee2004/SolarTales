@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos NASA - Espacio y Clima Solar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" type="image/png" href="./recursos/img6.png">
+</head>
+  <style>
+    body {
+      cursor: none; /* ocultamos el cursor original */
+    }
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d4a525;
+      pointer-events: none;
+      animation: float 1s linear forwards;
+    }
+    @keyframes float {
+      to {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('mousemove', e => {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      b.style.left = e.pageX + 'px';
+      b.style.top = e.pageY + 'px';
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 1000);
+    });
+  </script>
+<body>
+
+<!-- Sistema Solar Interactivo -->
+<div id="sistema-solar">
+    <div class="sol"></div>
+    
+    <div class="orbita mercurio-orbita">
+        <div class="planeta mercurio"></div>
+    </div>
+    
+    <div class="orbita venus-orbita">
+        <div class="planeta venus"></div>
+    </div>
+    
+    <div class="orbita tierra-orbita">
+        <div class="planeta tierra">
+            <div class="luna"></div>
+        </div>
+    </div>
+    
+    <div class="orbita marte-orbita">
+        <div class="planeta marte"></div>
+    </div>
+</div>
+
+<!-- Constelaciones -->
+<div id="constelaciones"></div>
+
+<!-- Cometas y Asteroides -->
+<div id="cometas"></div>
+<div id="asteroides"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png" alt="NASA Logo" class="nasa-logo">
+            <span class="brand-text">Cuentos Estelares</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="videos.html">Videos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="galeria.html">Galeria de cuentos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">Videos Interactivos del Espacio</h1>
+                    <p class="hero-text">Explora el universo, el clima solar y los misterios de las estrellas con nuestros personajes animados.</p>
+                    <div class="controles-sistema-solar">
+                        <button class="btn-control" id="btn-fullscreen">
+                            <i class="fas fa-expand"></i> Pantalla Completa
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-illustration">
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/astronauta-bailando-en-cohete-illustration-svg-download-png-3550529.png" alt="Personaje Espacial" class="girl-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Videos -->
+<section class="areas-section">
+    <div class="container">
+        <h2 class="section-title">Galería de Videos</h2>
+        <div class="row g-4 justify-content-center">
+            <!-- Video Card 1 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="area-card video-card">
+                    <div class="video-badge">
+                        <span class="badge-category"></span>
+                    </div>
+                    <div class="area-icon">🚀</div>
+                    <h3 class="area-title">How Solar Flares Affect Earth</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/RZ3F-jTgiJc" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">La NASA ha publicado una visualización detallada de las eyecciones de masa coronal que tuvieron lugar en julio y agosto de 2012. Una de ellas fue una de las más fuertes registradas y la vista de arriba hacia abajo y frontal que la NASA ha producido muestra la escala de la misma a medida que abarca el sistema solar.</p>
+
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="area-card video-card">
+                    <div class="area-icon">🌞</div>
+                    <h3 class="area-title">When A Solar Storm Engulfs Earth</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/RZ3F-jTgiJc" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Descubre cómo el clima solar afecta a nuestro planeta y la tecnología espacial.</p>
+
+                </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="area-card video-card">
+
+                    <div class="area-icon">🪐</div>
+                    <h3 class="area-title">Exploración de Planetas</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/Ayn58bJCk-Y" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Un equipo de científicos, liderado por Laura Hayes, física solar que divide su tiempo entre el Centro Goddard de la NASA y el Trinity College de Dublín, Irlanda, investigó la conexión entre las erupciones solares y la atmósfera terrestre..</p>
+                </div>
+            </div>
+
+            <!-- Video Card 4 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="area-card video-card">
+                    <div class="area-icon">👩‍🚀</div>
+                    <h3 class="area-title">How NASA's Parker Solar Probe Will Survive the Sun</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/RT9laVHZZQo" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">La sonda solar Parker de la NASA se dirige al Sol. La ingeniera de sistemas de protección térmica Betsy Congdon (Johns Hopkins APL) explica por qué Parker puede soportar el calor..</p>
+                </div>
+            </div>
+
+            <!-- Video Card 6 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="area-card video-card">
+                    <div class="area-icon">🌕</div>
+                    <h3 class="area-title">Space Weather and Earth's Aurora</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/HJfy8acFaOg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Las auroras son luces de colores en el cielo nocturno que aparecen principalmente en las regiones polares de la Tierra. Pero ¿qué las causa? El culpable es nuestro propio Sol y el plasma solar que se expulsa durante un evento magnético, como una llamarada o una eyección de masa coronal..</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-brand">
+                        <i class="fas fa-rocket me-2"></i>
+                        Cuentos Estelares
+                    </div>
+                    <p class="footer-text">
+                        Proyecto educativo para el NASA Space Apps Challenge 2025<br>
+                        "Historias estelares: El clima espacial a través de los ojos de los terrícolas"
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="https://www.spaceappschallenge.org/2025/">Acerca de NASA Space Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Créditos y Reconocimientos</h5>
+                    <div class="footer-text">
+                        <p>Equipo Space Apps 2025 "Llauchitas.png"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">
+                            &copy; 2025 NASA Space Apps Challenge
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Crear estrellas en el fondo
+    function crearEstrellas() {
+        const contenedor = document.createElement('div');
+        contenedor.className = 'estrellas-fondo';
+        
+        for (let i = 0; i < 200; i++) {
+            const estrella = document.createElement('div');
+            estrella.className = 'estrella';
+            estrella.style.left = `${Math.random() * 100}%`;
+            estrella.style.top = `${Math.random() * 100}%`;
+            estrella.style.animationDelay = `${Math.random() * 3}s`;
+            contenedor.appendChild(estrella);
+        }
+        
+        document.body.appendChild(contenedor);
+    }
+
+    // Inicializar
+    document.addEventListener('DOMContentLoaded', function() {
+        crearEstrellas();
+        
+        // Botón de pantalla completa
+        document.getElementById('btn-fullscreen').addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Imagen interactiva 3D</title>
+<link rel="icon" type="image/png" href="../recursos/img6.png">
+
+  <style>
+    body {
+      cursor: none; /* ocultamos el cursor original */
+    }
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d4a525;
+      pointer-events: none;
+      animation: float 1s linear forwards;
+    }
+    @keyframes float {
+      to {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <script>
+    document.addEventListener('mousemove', e => {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      b.style.left = e.pageX + 'px';
+      b.style.top = e.pageY + 'px';
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 1000);
+    });
+  </script>
+<style>
+:root{--w:800px;--h:500px}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial}
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255,255,255,0.8);
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.back-btn:hover {
+  background-color: rgba(255,255,255,1);
+}
+body{display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#111}
+.scene{width:clamp(320px,80vw,var(--w));height:clamp(200px,60vh,var(--h));perspective:1000px}
+.card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .2s;will-change:transform;cursor:grab;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#222 0,#111 100%)}
+.card.grabbing{cursor:grabbing}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(30px) scale(var(--scale,1))}
+.dot{position:absolute;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;font-size:12px;color:#000;border:2px solid #000;box-shadow:0 6px 18px rgba(0,0,0,.5);z-index:5}
+.dot:after{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:#ff3;opacity:.9}
+.hint{position:absolute;left:50%;top:100%;transform:translate(-50%,12px);background:rgba(0,0,0,.85);color:#fff;padding:10px 12px;border-radius:8px;white-space:nowrap;font-size:14px;box-shadow:0 8px 30px rgba(0,0,0,.6);z-index:20;pointer-events:none;opacity:0;transition:opacity .18s,transform .18s}
+.dot:hover + .hint{opacity:1;transform:translate(-50%,6px)}
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.5);z-index:50;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal.open{opacity:1;pointer-events:auto}
+.card-panel{background:#fff;padding:18px;border-radius:10px;max-width:520px;max-height:70vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.close{background:#111;color:#fff;border:none;padding:6px 10px;border-radius:8px;margin-left:8px}
+.controls{position:absolute;right:12px;bottom:12px;z-index:60;display:flex;gap:8px}
+.btn{background:rgba(0,0,0,.6);color:#fff;border:1px solid rgba(255,255,255,.08);padding:6px 8px;border-radius:8px}
+.legend{position:absolute;left:12px;bottom:12px;color:#fff;font-size:13px;opacity:.9}
+@media (max-width:520px){.dot{width:14px;height:14px}}
+</style>
+</head>
+<body>
+     <a href="index.html" class="back-btn">⟵ Volver al inicio</a>
+<div class="scene">
+  <div class="card" id="card" style="--scale:1">
+    <img id="img" src="https://spaceplace.nasa.gov/spaceweather/sp/spaceweather2.sp.jpg" alt="Imagen interactiva">
+
+    <button class="dot" style="left:20%;top:35%" data-title="¡El Sol se despeina!" data-content="Una tormenta solar comienza cuando los campos magnéticos del Sol se enredan mucho, como un cabello que se despeina al despertar. Cuando estos 'cabellos magnéticos' se rompen y se juntan de nuevo, ¡liberan una explosión gigante de energía!">1</button>
+    <div class="hint">Click para ver</div>
+
+    <button class="dot" style="left:40%;top:50%" data-title="Tenemos un escudo mágico" data-content="Aunque las tormentas solares son muy poderosas, no nos hacen daño directo aquí en la Tierra. ¡Nuestro planeta tiene un campo magnético y una atmósfera (el aire que respiramos) que actúan como un súper escudo para protegernos!.">2</button>
+    <div class="hint">Click para ver</div>
+
+    <button class="dot" style="left:60%;top:30%" data-title="¡Auroras, las luces de colores!" data-content="Cuando una tormenta solar choca con nuestro escudo terrestre, puede causar una 'tormenta geomagnética'. ¿Y qué crea esto? ¡Las hermosas auroras boreales (en el norte) y australes (en el sur), esas luces de colores que bailan en el cielo!">3</button>
+    <div class="hint">Click para ver</div>
+
+    <button class="dot" style="left:75%;top:60%" data-title="¡Llamaradas más fuertes que bombas! " data-content="Las explosiones más brillantes de estas tormentas se llaman llamaradas solares. Las más grandes son tan fuertes que tienen una energía parecida a mil millones de bombas de hidrógeno. ¡Son las explosiones más potentes de todo nuestro sistema solar!">4</button>
+    <div class="hint">Click para ver</div>
+
+    <button class="dot" style="left:85%;top:40%" data-title="¡Llegan súper rápido!" data-content="La luz y la radiación de una llamarada solar viajan tan rápido que llegan a la Tierra en solo 8 minutos después de la explosión. ¡Eso es casi instantáneo! Otras partes de la tormenta, como las nubes gigantes de material, tardan desde unas 15 horas hasta varios días.">5</button>
+    <div class="hint">Click para ver</div>
+
+    <div class="controls">
+      <button class="btn" id="reset">Reset</button>
+      <button class="btn" id="fit">Ajustar</button>
+    </div>
+    <div class="legend">Arrastra para rotar • Rueda para acercar</div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="card-panel" id="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <strong id="t">Título</strong>
+      <div>
+        <button class="close" id="c1">Cerrar</button>
+      </div>
+    </div>
+    <div id="b">Contenido</div>
+  </div>
+</div>
+
+<script>
+const c=document.getElementById('card'),img=document.getElementById('img'),dots=[...document.querySelectorAll('.dot')],m=document.getElementById('modal'),t=document.getElementById('t'),b=document.getElementById('b'),r=document.getElementById('reset'),f=document.getElementById('fit')
+let rx=0,ry=0,sz=1,drag=false,lastX=0,lastY=0
+c.addEventListener('mousedown',e=>{drag=true;c.classList.add('grabbing');lastX=e.clientX;lastY=e.clientY})
+document.addEventListener('mouseup',()=>{drag=false;c.classList.remove('grabbing')})
+document.addEventListener('mousemove',e=>{if(drag){const nx=e.clientX,ny=e.clientY,dx=nx-lastX,dy=ny-lastY;ry+=dx*0.25;rx-=dy*0.25;lastX=nx;lastY=ny;update()}})
+function update(){c.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg) scale(${sz})`}
+window.addEventListener('wheel',e=>{e.preventDefault();sz+=-e.deltaY*0.001;sz=Math.min(Math.max(sz,0.5),2);c.style.setProperty('--scale',sz);update()},{passive:false})
+function resetAll(){rx=0;ry=0;sz=1;c.style.setProperty('--scale',1);update()}
+r.addEventListener('click',resetAll)
+f.addEventListener('click',resetAll)
+dots.forEach(d=>d.addEventListener('click',e=>{const el=e.currentTarget;t.textContent=el.dataset.title;b.textContent=el.dataset.content;m.classList.add('open')}))
+document.getElementById('c1').addEventListener('click',()=>m.classList.remove('open'))
+let touchStart=false
+c.addEventListener('touchstart',e=>{touchStart=true;lastX=e.touches[0].clientX;lastY=e.touches[0].clientY})
+document.addEventListener('touchend',()=>touchStart=false)
+document.addEventListener('touchmove',e=>{if(touchStart){const nx=e.touches[0].clientX,ny=e.touches[0].clientY,dx=nx-lastX,dy=ny-lastY;ry+=dx*0.25;rx-=dy*0.25;lastX=nx;lastY=ny;update();e.preventDefault()}},{passive:false})
+</script>
+</body>
+</html>

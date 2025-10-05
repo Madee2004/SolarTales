@@ -1,0 +1,902 @@
+
+        :root {
+            --azul-galaxia: #094d68;
+            --azul-espacio: #0a2a3d;
+            --azul-profundo: #1e4d6b;
+            --blanco-nube: #FFFFFF;
+            --amarillo-sol: #FFD166;
+            --rosa-nebula: #FFAEC0;
+            --morado-aurora: #C8A2F5;
+            --verde-planeta: #A8E6CF;
+            --naranja-marte: #FF6B6B;
+            --sombra-suave: 0 8px 25px rgba(0,0,0,0.1);
+            --transicion-rapida: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, var(--azul-espacio), var(--azul-galaxia));
+            color: #ffffff;
+            line-height: 1.6;
+            padding-top: 76px;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka One', cursive;
+            color: #ffffff;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(9, 77, 104, 0.95) !important;
+            box-shadow: var(--sombra-suave);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-text {
+            background: linear-gradient(135deg, #ffffff, var(--amarillo-sol));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nasa-logo {
+            height: 50px;
+            margin-right: 15px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+            transition: var(--transicion-rapida);
+        }
+
+        .nasa-logo:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #ffffff !important;
+            margin: 0 0.8rem;
+            border-radius: 25px;
+            transition: var(--transicion-rapida);
+            padding: 0.5rem 1.2rem !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-nav .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .navbar-nav .nav-link:hover:before {
+            left: 100%;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background: var(--blanco-nube);
+            color: var(--azul-profundo) !important;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ffffff, var(--amarillo-sol));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-text {
+            font-size: 1.3rem;
+            color: #d6dfe7;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .btn-explorar {
+            background: var(--amarillo-sol);
+            color: var(--azul-espacio);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion-rapida);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-explorar:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-explorar:hover:before {
+            left: 100%;
+        }
+
+        .btn-explorar:hover {
+            background: #ffc107;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255,209,102,0.4);
+            color: var(--azul-espacio);
+        }
+
+        .hero-illustration {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: flotar 4s ease-in-out infinite;
+            transition: var(--transicion-rapida);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            filter: brightness(1.1);
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== SISTEMA SOLAR INTERACTIVO ===== */
+        #sistema-solar {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .sol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD166, #FF9E00, #FF6B00);
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FF6B00, 0 0 100px #FF9E00;
+            animation: brilloSolar 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes brilloSolar {
+            0% { box-shadow: 0 0 50px #FF6B00, 0 0 100px #FF9E00; }
+            100% { box-shadow: 0 0 80px #FF6B00, 0 0 150px #FF9E00, 0 0 200px #FFD166; }
+        }
+
+        .orbita {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: rotarOrbita linear infinite;
+        }
+
+        .mercurio-orbita {
+            width: 120px;
+            height: 120px;
+            animation-duration: 4s;
+        }
+
+        .venus-orbita {
+            width: 180px;
+            height: 180px;
+            animation-duration: 8s;
+        }
+
+        .tierra-orbita {
+            width: 240px;
+            height: 240px;
+            animation-duration: 12s;
+        }
+
+        .marte-orbita {
+            width: 300px;
+            height: 300px;
+            animation-duration: 16s;
+        }
+
+        @keyframes rotarOrbita {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .planeta {
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .planeta:hover {
+            transform: translateX(-50%) scale(1.3);
+            filter: brightness(1.5);
+        }
+
+        .mercurio {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(45deg, #8C7853, #B8B8B8);
+            box-shadow: 0 0 10px #8C7853;
+        }
+
+        .venus {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(45deg, #FFC649, #E39E54);
+            box-shadow: 0 0 12px #FFC649;
+        }
+
+        .tierra {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(45deg, #6B93D6, #4CAF50);
+            box-shadow: 0 0 15px #6B93D6;
+            position: relative;
+        }
+
+        .luna {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #B8B8B8;
+            border-radius: 50%;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: orbitaLuna 2s linear infinite;
+        }
+
+        @keyframes orbitaLuna {
+            from { transform: translateX(-50%) rotate(0deg) translateX(15px) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg) translateX(15px) rotate(-360deg); }
+        }
+
+        .marte {
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(45deg, #FF6B6B, #C44545);
+            box-shadow: 0 0 12px #FF6B6B;
+        }
+
+        /* ===== CONSTELACIONES INTERACTIVAS ===== */
+        #constelaciones {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .constelacion {
+            position: absolute;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+        }
+
+        .constelacion .estrella {
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            animation: titilar 3s infinite alternate;
+        }
+
+        .constelacion .linea {
+            position: absolute;
+            height: 1px;
+            background: rgba(255,255,255,0.3);
+            transform-origin: 0 0;
+        }
+
+        .constelacion:hover {
+            filter: brightness(2);
+            transform: scale(1.2);
+        }
+
+        .constelacion:hover .estrella {
+            animation: brilloConstelacion 0.5s infinite alternate;
+        }
+
+        @keyframes brilloConstelacion {
+            0% { box-shadow: 0 0 2px white; }
+            100% { box-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
+        }
+
+        /* ===== COMETAS Y ASTEROIDES ===== */
+        #cometas, #asteroides {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cometa {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #87CEEB;
+        }
+
+        .cometa::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #87CEEB);
+            transform: translateY(-50%);
+        }
+
+        .asteroide {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #8C7853;
+            border-radius: 20%;
+            animation: rotarAsteroide 4s linear infinite;
+        }
+
+        @keyframes rotarAsteroide {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== ASTRONAUTA INTERACTIVO ===== */
+        .floating-astronaut {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .astronauta {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+        }
+
+        .astronauta:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .casco {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .cuerpo {
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .brazos, .piernas {
+            position: absolute;
+            background: white;
+        }
+
+        .brazos {
+            width: 40px;
+            height: 8px;
+            top: 55px;
+            animation: moverBrazos 2s ease-in-out infinite alternate;
+        }
+
+        .piernas {
+            width: 8px;
+            height: 30px;
+            top: 95px;
+            animation: moverPiernas 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes moverBrazos {
+            0% { transform: translateX(-50%) rotate(-10deg); }
+            100% { transform: translateX(-50%) rotate(10deg); }
+        }
+
+        @keyframes moverPiernas {
+            0% { transform: translateX(-50%) rotate(-5deg); }
+            100% { transform: translateX(-50%) rotate(5deg); }
+        }
+
+        /* ===== CONTROLES INTERACTIVOS ===== */
+        .controles-sistema-solar {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-control {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--amarillo-sol);
+            color: var(--amarillo-sol);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+            backdrop-filter: blur(10px);
+            font-size: 0.9rem;
+        }
+
+        .btn-control:hover {
+            background: var(--amarillo-sol);
+            color: var(--azul-espacio);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,209,102,0.3);
+        }
+
+        /* ===== MINI JUEGO ===== */
+        .juego-section {
+            padding: 4rem 0;
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            margin: 2rem auto;
+            max-width: 95%;
+        }
+
+        .juego-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .puntuacion {
+            font-size: 1.5rem;
+            color: var(--amarillo-sol);
+            margin-bottom: 20px;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .area-juego {
+            width: 100%;
+            height: 300px;
+            background: rgba(0,0,0,0.5);
+            border: 2px solid var(--amarillo-sol);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .estrella-fugaz {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #87CEEB;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+        }
+
+        .estrella-fugaz::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            width: 15px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #87CEEB);
+            transform: translateY(-50%);
+        }
+
+        .estrella-fugaz:hover {
+            transform: scale(2);
+            background: #FFD700;
+        }
+
+        .btn-jugar {
+            background: var(--amarillo-sol);
+            color: var(--azul-espacio);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+        }
+
+        .btn-jugar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(255,209,102,0.5);
+        }
+
+        /* ===== SECCIÓN DE ÁREAS ===== */
+        .areas-section {
+            padding: 5rem 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px 30px 0 0;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--azul-galaxia), var(--amarillo-sol));
+            border-radius: 2px;
+        }
+
+        .area-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            color: #2c3e50;
+        }
+
+        .area-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.5s;
+        }
+
+        .area-card:hover:before {
+            left: 100%;
+        }
+
+        .area-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            border-color: var(--amarillo-sol);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .area-icon {
+            font-size: 3rem;
+            color: var(--azul-profundo);
+            margin-bottom: 1.5rem;
+            transition: var(--transicion-rapida);
+            display: inline-block;
+        }
+
+        .area-card:hover .area-icon {
+            transform: scale(1.2) rotate(15deg);
+            color: var(--azul-galaxia);
+        }
+
+        .area-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transition: var(--transicion-rapida);
+        }
+
+        .area-card:hover .area-title {
+            color: var(--azul-galaxia);
+        }
+
+        .area-count {
+            display: inline-block;
+            background: var(--amarillo-sol);
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            transition: var(--transicion-rapida);
+        }
+
+        .area-card:hover .area-count {
+            background: var(--azul-galaxia);
+            color: var(--blanco-nube);
+            transform: scale(1.1);
+        }
+
+        .area-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            transition: var(--transicion-rapida);
+        }
+
+        .area-card:hover .area-description {
+            color: #5a6c7d;
+        }
+
+        /* ===== EFECTOS ESPECIALES ===== */
+        .llamarada-solar {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, transparent 30%, #FF6B00 70%);
+            border-radius: 50%;
+            animation: expandirLlamarada 1s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes expandirLlamarada {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        .explosion-estrella {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #FFD700, transparent);
+            border-radius: 50%;
+            animation: explosionEstrella 0.6s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes explosionEstrella {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* ===== EFECTOS DE ESTRELLAS EN EL FONDO ===== */
+        .estrellas-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .estrella {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: titilar 3s infinite alternate;
+        }
+
+        @keyframes titilar {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--azul-galaxia), var(--azul-profundo));
+            color: #ffffff;
+            padding: 3rem 0 1rem;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amarillo-sol), var(--rosa-nebula), var(--verde-planeta));
+        }
+
+        .footer-brand {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-text {
+            color: #d6dfe7;
+            line-height: 1.6;
+        }
+
+        .footer h5 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #d7dde2;
+            text-decoration: none;
+            transition: var(--transicion-rapida);
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-links a:before {
+            content: '🪐';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: var(--transicion-rapida);
+        }
+
+        .footer-links a:hover {
+            color: var(--amarillo-sol);
+            padding-left: 25px;
+        }
+
+        .footer-links a:hover:before {
+            opacity: 1;
+            left: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: #d6dfe7;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                max-width: 300px;
+                margin-top: 2rem;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0.2rem 0;
+                text-align: center;
+            }
+            
+            .controles-sistema-solar {
+                justify-content: center;
+            }
+            
+            .sistema-solar {
+                transform: translate(-50%, -50%) scale(0.7);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    

@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333; /* Fondo oscuro para resaltar el Sol */
+}
+
+/* Contenedor principal de la escena 3D */
+#container-3d {
+    width: 65%;
+    height: 100%;
+    background-color: #111; /* Aún más oscuro */
+}
+
+/* Controles y datos */
+#controls {
+    width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+    color: #333;
+}
+
+#controls h1 {
+    color: #ff9900; /* Naranja/Dorado */
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Estilo de los botones */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #ffaa00; /* Botones Naranja */
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #ffc266;
+    transform: translateY(-2px);
+}
+
+/* Área de visualización de datos */
+#data-display {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ff9900;
+    background-color: #222; /* Fondo de datos oscuro */
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+#data-display p {
+    margin: 0;
+    color: #eee; /* Texto de datos claro */
+    font-weight: normal;
+    line-height: 1.5;
+}

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Códice Solar</title>
+  <link rel="stylesheet" href="estilos/style.css" />
+</head>
+  <style>
+    body { cursor: none; }
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d4a525;
+      pointer-events: none;
+      animation: float 1s linear forwards;
+    }
+    @keyframes float {
+      to { transform: translateY(-50px); opacity: 0; }
+    }
+
+    @keyframes flotar {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('mousemove', e => {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      b.style.left = e.pageX + 'px';
+      b.style.top = e.pageY + 'px';
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 1000);
+    });
+  </script>
+<body>
+   <a href="index.html" class="back-btn">⟵ Volver al inicio</a>
+  <h1 class="page-title">Biblioteca de relatos</h1>
+  <!-- Fondo espacial -->
+  <div class="space">
+    <div class="stars layer1"></div>
+    <div class="stars layer2"></div>
+    <div class="stars layer3"></div>
+  </div>
+
+  <!-- Sol central -->
+  <!-- Sol central -->
+  <div class="sun">
+    <img src="images/solfacha.png" alt="Sol" class="sun-image" />
+  </div>
+
+
+  <!-- ÓRBITAS Y PLANETAS -->
+  <div class="orbit orbit1">
+    <div class="orbit-inner">
+      <button class="planet" style="--color:#4FC3F7" data-title="Llamarada Solar" 
+        data-p1="Todo el tiempo, el Sol libera explosiones gigantes cuando su hermoso peinado de campos magnéticos se enreda tanto, que termina estirándose y rompiéndose… para volver a conectarse en un estallido de luz.
+Así ha sido desde siempre.
+Cada chispa, cada llamarada, forma parte de su manera de respirar.
+Los planetas lo saben."
+data-img1="images/j.png"
+data-p2="Mercurio aguanta el calor, Venus se cubre con nubes densas, y la Tierra… la Tierra se protege con un escudo invisible, hecho de campos magnéticos que abrazan su atmósfera.
+Pero un día, una de esas explosiones fue más fuerte de lo habitual.
+El Sol, sin querer, respiró con más fuerza de lo que jamás lo había hecho.
+Su energía se acumuló, giró y crepitó como fuego atrapado en una danza de luz.
+Hasta que, de repente, estalló."
+data-img2="images/d.png" 
+data-p3="Una ola de partículas cargadas se lanzó al espacio, viajando a millones de kilómetros por hora.
+Superó el equilibrio natural del Sol y desató una corriente tan poderosa que viajó por el vacío, atravesando la distancia que separa a la estrella de su pequeño planeta azul."
+data-img3="images/h.png"
+data-p4="Al principio, nadie en la Tierra lo notó.
+El mar seguía moviéndose, los autos seguían su ruta, los niños seguían jugando.
+Pero allá arriba, en el silencio del espacio, las partículas ya viajaban a toda velocidad.
+Pasaron junto a Marte, rozaron los bordes de la Luna, y finalmente tocaron la capa protectora de la Tierra."
+data-img4="images/c.png"
+data-p5="El escudo magnético se encendió como si despertara de un sueño profundo.
+Se curvó, tembló… y resistió.
+En cuestión de segundos, el cielo se llenó de luces verdes, rojas y violetas.
+Las auroras danzaron sobre los polos y se extendieron hacia lugares donde nunca habían brillado antes."
+data-img5="images/sw.png" 
+data-p6="En la Tierra, algunos sintieron que algo pasaba.
+Las luces titilaron, las brújulas se movieron solas, los satélites parpadearon en el cielo.
+Pero nadie se asustó por mucho tiempo.
+Porque, en medio de la oscuridad, el planeta recordaba que aquel resplandor no era una amenaza… sino una señal de vida."
+data-img6="images/b.png"
+        data-p7="El Sol había respirado fuerte, sí,
+pero su fuego seguía siendo el mismo que nos calienta, nos ilumina y nos hace existir.
+Y cuando la tormenta terminó, el amanecer volvió a ser el de siempre.
+El Sol, desde lejos, pareció sonreír."
+data-img7="images/solfacha.png" 
+data-p8="Y la Tierra, envuelta en su escudo brillante, le devolvió la sonrisa." data-img8="images/ts.png">
+        Llamarada Solar
+      </button>
+    </div>
+  </div>
+
+  <div class="orbit orbit2 reverse">
+    <div class="orbit-inner">
+      <button class="planet" style="--color:#BA68C8" data-title="Espacio"
+  data-p1="En la oscuridad silenciosa del espacio, la tripulación flotaba en rutina.
+De pronto, una señal interrumpió el zumbido constante de los sistemas.
+— “Alerta de tormenta solar. Intensidad alta. Buscar refugio inmediatamente.”"
+  data-img1="images/estr.png"
+
+  data-p2="Nova, Orión y Alina se miraron sin hablar.
+En segundos, activaron el modo de protección radiológica.
+Con movimientos firmes, sellaron compuertas y flotaron hasta el storm shelter, el corazón seguro de la nave.
+Mientras el exterior quedaba envuelto en un resplandor invisible, adentro solo se oían respiraciones y el eco del soporte vital.
+"
+  data-img2="images/ast.jpg"
+
+  data-p3="Afuera, el Sol había lanzado una llamarada tan fuerte que las partículas cargadas se dirigían también hacia la Tierra.
+La tormenta no tardó en alcanzar su punto máximo, golpeando con energía invisible el escudo de la nave.
+Dentro, solo quedaban los sonidos suaves del sistema de soporte vital… y las voces de tres humanos intentando entender el poder del Sol.
+"
+  data-img3="images/est.png"
+
+  data-p4="Nova:
+— Centro de control confirmó… la llamarada alcanzará la Tierra en menos de una hora.
+Orión (ajustando su casco):
+— Eso es más rápido de lo esperado.
+¿La magnetosfera podrá resistirla?
+Alina (mirando las pantallas):
+— Sí, pero no del todo.
+Habrá auroras espectaculares, incluso en lugares donde nunca se ven…
+y quizá algunas fallas eléctricas, apagones parciales, errores en GPS.
+"
+  data-img4="images/ast1.jpg"
+
+  data-p5="Nova:
+— Me cuesta imaginarlo.
+Desde aquí la Tierra parece tan tranquila, tan perfecta…
+y sin embargo, bastan unas partículas del Sol para recordarnos lo frágiles que somos.
+Orión (en tono reflexivo):
+— Cuando era niño, pensaba que las tormentas solo pasaban en la Tierra.
+Nunca imaginé que también llueve fuego en el espacio.
+Alina (sonríe, mirando por la escotilla):
+— Y aun así, todo forma parte del mismo equilibrio.
+Sin el Sol, nada viviría allá abajo…
+pero cuando respira demasiado fuerte, la tecnología se apaga, los aviones se desvían, y las ciudades se quedan a oscuras.
+"
+  data-img5="images/ast2.jpg"
+
+  data-p6="Nova:
+— Entonces, mientras allá intentan proteger sus redes, nosotros estamos aquí, dentro de una cápsula metálica, observando el poder que mantiene vivo todo lo que conocemos.
+Orión:
+— ¿Crees que lo entenderán? Que allá abajo alguien mire las luces del cielo y sepa que eso… no es solo belleza, sino una advertencia.
+Alina:
+— Tal vez.
+O tal vez solo digan: “Qué cielo tan bonito esta noche”.
+Y eso también está bien.
+Porque no siempre hay que entender el universo… a veces basta con maravillarse.
+"
+  data-img6="images/ast3.jpg">
+
+        Espacio>
+      </button>
+    </div>
+  </div>
+
+  <div class="orbit orbit3">
+    <div class="orbit-inner">
+      <button class="planet" style="--color:#FFD54F" data-title="Alerta"
+  data-p1="En una sala llena de pantallas, los relojes marcaban las 04:27.
+Afuera, la ciudad dormía.
+Dentro, las luces parpadeaban con la intensidad del aire antes de una tormenta eléctrica.
+En el Centro Nacional de Control Eléctrico, un grupo de ingenieros seguía una línea roja que subía en las gráficas del monitoreo espacial.
+— “Confirmado. CME de gran intensidad. Las gráficas del viento solar suben rápido. Impacto estimado en menos de diecisiete horas.”
+"
+  data-img1="images/cv7.png"
+
+  data-p2="El silencio que siguió fue más pesado que el ruido de las máquinas.
+Laura, jefa de turno, dejó el café en la mesa y tomó el micrófono.
+— Equipo, esto no es un simulacro. Activamos alerta nivel naranja.
+Comiencen reducción de carga en las líneas de alta tensión del norte y del corredor central.
+Avisen a los subcentros: que preparen el protocolo de apagado controlado si los índices magnéticos aumentan.
+"
+  data-img2="images/lau.jpg"
+
+  data-p3="Diego, el operador más joven, levantó la vista del monitor.
+— ¿Todo el corredor? Eso son millones de personas…
+— Lo sé —respondió Laura—. Pero si no reducimos carga ahora, cuando llegue el impacto será peor.
+Prefiero planear los apagones que lamentar un colapso total.
+El sonido de teclas, radios y teléfonos llenó la sala.
+Mensajes en cadena comenzaron a repetirse con voces firmes y entrecortadas:
+“Reducir tensión en línea 7… desconectar zona costera norte… monitoreo activo en subestación Andina…”
+"
+  data-img3="images/con1.jpg"
+
+  data-p4="Sergio, el más veterano del turno, observaba una pantalla donde un mapa del Sol mostraba una mancha brillante extendiéndose hacia la Tierra."
+  data-img4="images/e.png"
+
+  data-p5="— Nunca pensé que veríamos algo así.
+— Yo tampoco —dijo Laura sin apartar la vista—. Y aun así, aquí estamos… preparándonos para la respiración del Sol.
+"
+  data-img5="images/con.jpg"
+
+  data-p6="Dieciséis horas después.
+Los primeros reportes del satélite en el punto L1 comenzaron a llegar:
+densidad creciente, campo magnético inestable, partículas cargadas a toda velocidad.
+— Campo magnético terrestre en respuesta —informó Diego.
+Laura asintió, tomó el micrófono una vez más.
+— Prioridad roja. Impacto inminente.
+Cierre total de la línea 7 y desconexión inmediata de la subestación Andina.
+Las luces del centro parpadearon una vez.
+En los monitores, las gráficas se dispararon como un pulso acelerado.
+El impacto había comenzado.
+"
+  data-img6="images/con2.jpg"
+
+  data-p7="En los siguientes minutos, la red entera tembló.
+Unas estaciones resistieron; otras no.
+Pero el daño fue menor de lo esperado.
+Afuera, el cielo se cubrió de un resplandor extraño.
+Verdes, púrpuras y tonos azulados danzaban sobre el horizonte.
+Diego fue el primero en notarlo desde la ventana del pasillo.
+— Miren eso… —dijo, maravillado.
+"
+  data-img7="images/ab.jpg"
+
+  data-p8="Sergio se acercó lentamente, con los ojos entrecerrados.
+— Pensé que esas luces solo se veían en los polos.
+Laura sonrió con cansancio.
+— Hoy el Sol quiso recordarnos que también puede ser artista.
+Durante unos segundos, nadie habló.
+Solo observaron el cielo teñido por la tormenta, sabiendo que mañana habría reportes, reparaciones y largas jornadas…
+pero también la tranquilidad de haber hecho lo necesario.
+"
+  data-img8="images/con.jpg"
+
+  data-p9="— Bueno —dijo Laura al fin, volviendo al panel—.
+Apuntemos todo. El Sol no descansa, y nosotros tampoco.
+"
+  data-img9="images/conf.jpg">
+        Alerta
+      </button>
+    </div>
+  </div>
+
+  <div class="orbit orbit4 reverse">
+    <div class="orbit-inner">
+      <button class="planet" style="--color:#EF5350" data-title="Consecuencias"
+
+            data-p2="Esa noche, la casa se quedó en silencio.
+Primero se apagaron las luces del pasillo, luego el televisor, y por último el zumbido del refrigerador.
+—¿Otra vez se fue la luz? —preguntó Mateo, mirando a su madre.
+—Parece que sí —respondió ella, encendiendo una linterna—.
+Pero esta vez… parece distinto.
+"
+            data-img2="images/ml.png"
+
+            data-p3="Afuera, la calle también estaba oscura. Las farolas se habían apagado, y en las ventanas de los vecinos solo se veían destellos de velas.
+
+"
+            data-img3="images/veci.jpg"
+
+            data-p4="El padre revisó el celular, pero no había señal.
+Ni internet, ni GPS, ni radio. Solo silencio.
+—Debe ser algo grande —dijo, tratando de mantener la calma—. Vamos a esperar.
+Mientras tanto, la familia encendió algunas velas.
+La madre calentó agua en una olla pequeña de gas, y los niños se sentaron cerca, como si las sombras los abrazaran.
+"
+            data-img4="images/pc.png"
+
+            data-p5="—Papá, ¿y si nunca vuelve la luz? —preguntó Lucía, la menor.
+—Claro que volverá —respondió él, sonriendo—. Pero sabes, cuando era niño, las noches así eran las mejores.
+Podíamos ver el cielo entero.
+Entonces salieron al patio.
+El aire estaba quieto y frío.
+Sin farolas ni reflejos, el cielo se veía más profundo, más real.
+Y de pronto, ocurrió.
+"
+            data-img5="images/ph.jpg"
+
+            data-p6="Una línea verde cruzó el horizonte. Luego otra, púrpura, y otra, roja.
+En segundos, el cielo se llenó de luces danzantes que se movían como cortinas de fuego suave.
+—¿Qué es eso? —susurró Lucía.
+—Se llama aurora —dijo la madre con voz baja, como si no quisiera romper la magia—.
+Es el cielo pintado por el Sol cuando lanza un abrazo demasiado fuerte.
+Las luces se movían lentamente, cambiando de forma, de intensidad.
+Mateo levantó la mano, como si pudiera tocarlas.
+—Parece que el cielo está vivo…
+—Lo está —respondió el padre—. Solo que casi nunca lo notamos.
+"
+            data-img6="images/fmh.jpg"
+
+            data-p7="Permanecieron así un largo rato.
+Nadie pensó en el teléfono, ni en la televisión, ni en los mensajes que no llegaban.
+Solo miraron hacia arriba, envueltos en colores que danzaban en silencio.
+La tormenta solar había desatado caos en el mundo,
+pero en esa pequeña casa, en esa noche sin electricidad,
+una familia había vuelto a mirar el cielo como los antiguos,
+con asombro y gratitud.
+"
+            data-img7="images/fm.jpg"
+
+            data-p8="—Mamá —dijo Lucía, casi dormida—, ¿crees que el Sol nos está saludando?
+La madre sonrió.
+—Sí, mi amor. Y creo que la Tierra le está devolviendo la sonrisa.
+"
+            data-img8="images/mh.jpg">
+        Consecuencias
+      </button>
+    </div>
+  </div>
+
+  <div class="hint">Haz clic en un planeta para abrir el códice 📖</div>
+
+  <!-- LIBRO 3D -->
+  <div class="book-modal" id="bookModal">
+    <div class="book" id="book3D">
+      <!-- 14 páginas (7 pares). Título en la primera -->
+      <div class="page" id="page1">
+        <div class="page-content">
+          <div class="book-image"><img id="img1" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <h2 id="bookTitle"></h2>
+            <p id="p1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page2">
+        <div class="page-content">
+          <div class="book-image"><img id="img2" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p2"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page3">
+        <div class="page-content">
+          <div class="book-image"><img id="img3" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p3"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page4">
+        <div class="page-content">
+          <div class="book-image"><img id="img4" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p4"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page5">
+        <div class="page-content">
+          <div class="book-image"><img id="img5" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p5"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page6">
+        <div class="page-content">
+          <div class="book-image"><img id="img6" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p6"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page7">
+        <div class="page-content">
+          <div class="book-image"><img id="img7" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p7"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page8">
+        <div class="page-content">
+          <div class="book-image"><img id="img8" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p8"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page9">
+        <div class="page-content">
+          <div class="book-image"><img id="img9" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p9"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page10">
+        <div class="page-content">
+          <div class="book-image"><img id="img10" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p10"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page11">
+        <div class="page-content">
+          <div class="book-image"><img id="img11" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p11"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page12">
+        <div class="page-content">
+          <div class="book-image"><img id="img12" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p12"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page13">
+        <div class="page-content">
+          <div class="book-image"><img id="img13" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p13"></p>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page14">
+        <div class="page-content">
+          <div class="book-image"><img id="img14" src="images/a.png" alt=""></div>
+          <div class="book-text">
+            <p id="p14"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="prevPage">⟵</button>
+      <button id="nextPage">⟶</button>
+      <button id="closeBook">×</button>
+    </div>
+  </div>
+
+  <script src="scripts/galeria.js"></script>
+</body>
+
+</html>
